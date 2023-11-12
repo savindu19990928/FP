@@ -44,14 +44,16 @@ namespace FP
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            string searchText = txtSearch.Text;
+            string searchText = txtSearch.Text.ToLower();
+
+            int cP = txtSearch.SelectionStart;
             txtSearch.Items.Clear();
+            txtSearch.SelectionStart = cP;
 
             foreach (string product in GlobalData.Products)
             {
-                if (product.Contains(searchText))
+                if (product.ToLower().Contains(searchText))
                 {
-                    Console.WriteLine(product);
                     txtSearch.Items.Add(product);
                 }
             }
@@ -65,7 +67,6 @@ namespace FP
             DataTable result = sqlconnection.Exequery("SELECT ProductName FROM Products");
 
             GlobalData.Products = result.AsEnumerable().Select(row => row.Field<string>("ProductName")).ToList();
-            Console.WriteLine(GlobalData.Products);
         }
     }
 }
