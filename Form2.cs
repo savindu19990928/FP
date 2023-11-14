@@ -54,6 +54,12 @@ namespace FP
 
         private void formMain_Load(object sender, EventArgs e)
         {
+            if (GlobalData.isADMIN)
+            {
+                this.addUserToolStripMenuItem.Visible = true;
+                this.manageProductToolStripMenuItem.Visible = true;
+                this.manageShopsToolStripMenuItem.Visible = true;
+            }
             ReportDocument reportDocument = new ReportDocument();
 
             string appPath = Application.StartupPath;

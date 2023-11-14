@@ -23,7 +23,6 @@ namespace FP
 
         private bool indexChanged = false;
         private bool dropClosed = false;
-        private string si;
         private void button1_Click(object sender, EventArgs e)
         {
             SqlConnect sqlconnection = new SqlConnect();
@@ -104,11 +103,7 @@ namespace FP
         private void txtSearch_SelectionChangeCommitted(object sender, EventArgs e)
         {
             indexChanged = true;
-            if (si == txtSearch.GetItemText(txtSearch.SelectedItem))
-            {
-                searchBar.Text = si;
-            }
-            si = txtSearch.GetItemText(txtSearch.SelectedItem);
+            searchBar.Text = txtSearch.GetItemText(txtSearch.SelectedItem);
             indexChanged = false;
         }
     }

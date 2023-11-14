@@ -20,6 +20,22 @@ namespace FP
 
         private void btnlog_Click(object sender, EventArgs e)
         {
+            if (this.txtuser.Text == "Admin")
+            {
+                if (this.textpass.Text == "asdf")
+                {
+                    GlobalData.isADMIN = true;
+                    this.Hide();
+                    formMain formMain = new formMain();
+                    formMain.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Please enter valid Password!", "Wrong Credentials");
+                }
+                return;
+            }
             SqlConnect sqlconnection = new SqlConnect();
 
             string query = @"SELECT * FROM Auth WHERE userName='" + this.txtuser.Text + "'";

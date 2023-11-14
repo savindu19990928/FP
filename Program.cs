@@ -12,7 +12,9 @@ namespace FP
     public static class GlobalData
     {
         public static string SingleProduct { get; set; }
+        public static bool isADMIN = false;
         public static List<string> Products { get; set; }
+        public static List<string> Imports { get; set; }
     }
 
     public class SqlConnect
@@ -73,7 +75,7 @@ namespace FP
             }
             finally
             {
-                Closecon();
+                this.Closecon();
             }
             return status;
         }
