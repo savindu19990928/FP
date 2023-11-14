@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace FP
 {
-    public partial class formImport : Form
+    public partial class formImportR : Form
     {
-        public formImport()
+        public formImportR()
         {
             InitializeComponent();
         }
@@ -45,7 +45,7 @@ namespace FP
         private void importReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formImport formImport = new formImport();
+            formImportR formImport = new formImportR();
             formImport.Show();
         }
 

@@ -41,7 +41,7 @@ namespace FP
         private void importReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formImport formImport = new formImport();
+            formImportR formImport = new formImportR();
             formImport.Show();
         }
 
@@ -61,6 +61,18 @@ namespace FP
             reportDocument.Load(Path.Combine(path, "CrystalReportAP1.rpt"));
 
             crystalReportViewer2.ReportSource = reportDocument;
+        }
+
+        private void addProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addProduct addProductform = new addProduct();
+            addProductform.Show();
+        }
+
+        private void editProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formEproduct formEproduct = new formEproduct();
+            formEproduct.Show();
         }
     }
 }

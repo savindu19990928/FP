@@ -19,6 +19,7 @@ namespace FP
     {
         private string conString;
         private SqlConnection con;
+        public string rMsg;
 
         public SqlConnect()
         {
@@ -45,9 +46,9 @@ namespace FP
                     }
                 }
             }
-            catch (Exception err)
+            catch (Exception)
             {
-                MessageBox.Show("Error executing query: " + err.Message);
+                rMsg = "Error executing query";
             }
             finally
             {
@@ -66,9 +67,9 @@ namespace FP
                     status = cmd.ExecuteNonQuery();
                 }
             }
-            catch (Exception err)
+            catch (Exception)
             {
-                MessageBox.Show("Error executing non-query: " + err.Message);
+                rMsg = "Error executing non-query";
             }
             finally
             {

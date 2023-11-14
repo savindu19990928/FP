@@ -47,7 +47,7 @@ namespace FP
         private void importReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formImport formImport = new formImport();
+            formImportR formImport = new formImportR();
             formImport.Show();
         }
 

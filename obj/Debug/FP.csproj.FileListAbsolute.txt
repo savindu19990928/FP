@@ -31,5 +31,7 @@ C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.pdb
 C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formSearch.resources
 C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formSproduct.resources
 C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formDmg.resources
-C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formImport.resources
 C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formExport.resources
+C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formImportR.resources
+C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.addProduct.resources
+C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formEproduct.resources

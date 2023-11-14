@@ -35,15 +35,19 @@
             this.damageReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.requestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportRequestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.importProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.addRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageShopsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addShopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editShopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,7 +75,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reportToolStripMenuItem,
-            this.requestToolStripMenuItem,
+            this.logOutToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
@@ -116,26 +120,11 @@
             this.exportReportToolStripMenuItem.Text = "Export Report";
             this.exportReportToolStripMenuItem.Click += new System.EventHandler(this.exportReportToolStripMenuItem_Click);
             // 
-            // requestToolStripMenuItem
+            // logOutToolStripMenuItem
             // 
-            this.requestToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importRequestToolStripMenuItem,
-            this.exportRequestToolStripMenuItem});
-            this.requestToolStripMenuItem.Name = "requestToolStripMenuItem";
-            this.requestToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
-            this.requestToolStripMenuItem.Text = "Request";
-            // 
-            // importRequestToolStripMenuItem
-            // 
-            this.importRequestToolStripMenuItem.Name = "importRequestToolStripMenuItem";
-            this.importRequestToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
-            this.importRequestToolStripMenuItem.Text = "Import Request";
-            // 
-            // exportRequestToolStripMenuItem
-            // 
-            this.exportRequestToolStripMenuItem.Name = "exportRequestToolStripMenuItem";
-            this.exportRequestToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
-            this.exportRequestToolStripMenuItem.Text = "Export Request";
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.logOutToolStripMenuItem.Text = "Log Out";
             // 
             // closeToolStripMenuItem
             // 
@@ -147,38 +136,86 @@
             // manageToolStripMenuItem
             // 
             this.manageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addProductToolStripMenuItem,
             this.manageProductToolStripMenuItem,
-            this.importsToolStripMenuItem,
-            this.exportsToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.manageShopsToolStripMenuItem});
             this.manageToolStripMenuItem.Name = "manageToolStripMenuItem";
             this.manageToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
             this.manageToolStripMenuItem.Text = "Manage";
             // 
+            // manageProductToolStripMenuItem
+            // 
+            this.manageProductToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addProductToolStripMenuItem,
+            this.editProductToolStripMenuItem});
+            this.manageProductToolStripMenuItem.Name = "manageProductToolStripMenuItem";
+            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.manageProductToolStripMenuItem.Text = "Manage Product";
+            // 
             // addProductToolStripMenuItem
             // 
             this.addProductToolStripMenuItem.Name = "addProductToolStripMenuItem";
-            this.addProductToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.addProductToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addProductToolStripMenuItem.Text = "Add Product";
+            this.addProductToolStripMenuItem.Click += new System.EventHandler(this.addProductToolStripMenuItem_Click);
             // 
-            // manageProductToolStripMenuItem
+            // editProductToolStripMenuItem
             // 
-            this.manageProductToolStripMenuItem.Name = "manageProductToolStripMenuItem";
-            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
-            this.manageProductToolStripMenuItem.Text = "Manage Product";
+            this.editProductToolStripMenuItem.Name = "editProductToolStripMenuItem";
+            this.editProductToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editProductToolStripMenuItem.Text = "Edit Product";
+            this.editProductToolStripMenuItem.Click += new System.EventHandler(this.editProductToolStripMenuItem_Click);
             // 
-            // importsToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.importsToolStripMenuItem.Name = "importsToolStripMenuItem";
-            this.importsToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
-            this.importsToolStripMenuItem.Text = "Manage Imports";
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem1.Text = "Trade";
             // 
-            // exportsToolStripMenuItem
+            // toolStripMenuItem2
             // 
-            this.exportsToolStripMenuItem.Name = "exportsToolStripMenuItem";
-            this.exportsToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
-            this.exportsToolStripMenuItem.Text = "Manage Exports";
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importProductToolStripMenuItem,
+            this.editToolStripMenuItem});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(137, 26);
+            this.toolStripMenuItem2.Text = "Import";
+            // 
+            // importProductToolStripMenuItem
+            // 
+            this.importProductToolStripMenuItem.Name = "importProductToolStripMenuItem";
+            this.importProductToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.importProductToolStripMenuItem.Text = "Add Record";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.editToolStripMenuItem.Text = "Edit Record";
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addRecordToolStripMenuItem,
+            this.editRecordToolStripMenuItem});
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(137, 26);
+            this.toolStripMenuItem3.Text = "Export";
+            // 
+            // addRecordToolStripMenuItem
+            // 
+            this.addRecordToolStripMenuItem.Name = "addRecordToolStripMenuItem";
+            this.addRecordToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.addRecordToolStripMenuItem.Text = "Add Record";
+            // 
+            // editRecordToolStripMenuItem
+            // 
+            this.editRecordToolStripMenuItem.Name = "editRecordToolStripMenuItem";
+            this.editRecordToolStripMenuItem.Size = new System.Drawing.Size(171, 26);
+            this.editRecordToolStripMenuItem.Text = "Edit Record";
             // 
             // manageShopsToolStripMenuItem
             // 
@@ -186,7 +223,7 @@
             this.addShopToolStripMenuItem,
             this.editShopToolStripMenuItem});
             this.manageShopsToolStripMenuItem.Name = "manageShopsToolStripMenuItem";
-            this.manageShopsToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
+            this.manageShopsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.manageShopsToolStripMenuItem.Text = "Manage Shops";
             // 
             // addShopToolStripMenuItem
@@ -271,11 +308,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem damageReportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem requestToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importRequestToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportRequestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageProductToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem importReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportReportToolStripMenuItem;
@@ -283,11 +316,19 @@
         private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageShopsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addShopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editShopToolStripMenuItem;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
+        private System.Windows.Forms.ToolStripMenuItem addProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem importProductToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem addRecordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editRecordToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
     }
 }
