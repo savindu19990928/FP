@@ -56,6 +56,12 @@ namespace FP
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (Ivalidator.AreInputsEmptyET(this) || String.IsNullOrEmpty(this.comboShopID.Text))
+            {
+                MessageBox.Show("Please fill requiered fields!");
+                return;
+            }
+
             SqlConnect sqlConnectInsertCheck = new SqlConnect();
             string sqlQuery0 = "SELECT stockCount FROM Products WHERE productName='" + this.txtName.Text + "'";
             DataTable stockNumDT = sqlConnectInsertCheck.Exequery(sqlQuery0);
@@ -76,7 +82,23 @@ namespace FP
                 return;
             }
 
-            string sqlQuery1 = @"UPDATE Products SET stockCount=stockCount - " + this.stockCount.Value.ToString() + " WHERE " + "productName='" + this.txtName.Text + "'";
+            SqlConnect sqlConnectRE = new SqlConnect();
+            string exeNonQuery = @"SELECT (SELECT SUM(importedCount) FROM Imports WHERE importedProduct='" + this.txtName.Text + "'" + ") - (SELECT SUM(exportedCount) FROM Exports WHERE exportedProduct='" + this.txtName.Text + "') AS StockDifference";
+            DataTable stockDifferenceDT = sqlConnectRE.Exequery(exeNonQuery);
+            int stockDifference = 0;
+
+            if (stockDifferenceDT.Rows[0]["StockDifference"] != DBNull.Value)
+            {
+                stockDifference = Convert.ToInt32(stockDifferenceDT.Rows[0]["StockDifference"]);
+            }
+
+            if (stockDifference < 0)
+            {
+                MessageBox.Show("Invalid record exist!");
+                return;
+            }
+
+            string sqlQuery1 = @"UPDATE Products SET stockCount=" + stockDifference + " WHERE " + "productName='" + this.txtName.Text + "'";
             SqlConnect sqlConnectStockUpdate = new SqlConnect();
             sqlConnectStockUpdate.ExeNonQuery(sqlQuery1);
 

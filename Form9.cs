@@ -19,7 +19,6 @@ namespace FP
 
         private bool indexChanged = false;
         private bool dropClosed = false;
-        private string si;
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -80,21 +79,23 @@ namespace FP
         private void comboP_SelectionChangeCommitted(object sender, EventArgs e)
         {
             indexChanged = true;
-            if (si == comboP.GetItemText(comboP.SelectedItem))
-            {
-                txtSearch.Text = si;
-            }
-            si = comboP.GetItemText(comboP.SelectedItem);
+            txtSearch.Text = comboP.GetItemText(comboP.SelectedItem);
             indexChanged = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (Ivalidator.AreInputsEmpty(this))
+            {
+                MessageBox.Show("Please fill requiered fields!");
+                return;
+            }
+
             SqlConnect sqlConnectionUp = new SqlConnect();
             string upQuery = @"UPDATE Products SET productName='" + txtNname.Text + "' WHERE productName='" + txtSearch.Text + "'";
-            sqlConnectionUp.ExeNonQuery(upQuery);
+            int status0 = sqlConnectionUp.ExeNonQuery(upQuery);
 
-            if (sqlConnectionUp.rMsg != "Error executing non-query")
+            if (status0 > 0)
             {
                 MessageBox.Show("Updating successfull");
             }
@@ -108,9 +109,9 @@ namespace FP
         {
             SqlConnect sqlConnectionUp = new SqlConnect();
             string upQuery = "DELETE FROM Products WHERE productName='" + txtSearch.Text + "'";
-            sqlConnectionUp.ExeNonQuery(upQuery);
+            int status = sqlConnectionUp.ExeNonQuery(upQuery);
 
-            if (sqlConnectionUp.rMsg != "Error executing non-query")
+            if (status > 0)
             {
                 MessageBox.Show("Deleting successfull");
             }
@@ -122,7 +123,7 @@ namespace FP
 
         private void txtNname_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
+            if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
             {
                 e.Handled = true;
             }

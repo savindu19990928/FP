@@ -210,38 +210,33 @@ namespace FP
                 return;
             }
 
+            if (Ivalidator.AreInputsEmptyET(this))
+            {
+                MessageBox.Show("Please fill requiered fields!");
+                return;
+            }
+
             SqlConnect sqlConnectRE = new SqlConnect();
             string exeNonquery = "UPDATE Imports SET importedProduct='" + this.txtName.Text + "' , importedCount=" + this.stockCount.Value + ", importStatus='" + this.txtStatus.Text + "' , importDate='" + this.datePicker.Value.ToString("yyyy-MM-dd") + "' " + "WHERE importedID='" + this.txtID.Text + "'";
-            sqlConnectRE.ExeNonQuery(exeNonquery);
 
-            SqlConnect sqlConnectRE2 = new SqlConnect();
-            string exeNonquery2 = "SELECT SUM(importedCount) FROM Imports";
-            DataTable newStockDT = sqlConnectRE2.Exequery(exeNonquery2);
-            int newStock = 0;
-            if (newStockDT.Rows[0][0] != DBNull.Value)
+            SqlConnect sqlConnectRE1 = new SqlConnect();
+            string exeNonQuery = @"SELECT (SELECT SUM(importedCount) FROM Imports WHERE importedProduct='" + this.txtName.Text + "'" + ") - (SELECT SUM(exportedCount) FROM Exports WHERE exportedProduct='" + this.txtName.Text + "') AS StockDifference";
+            DataTable stockDifferenceDT = sqlConnectRE1.Exequery(exeNonQuery);
+            int stockDifference = 0;
+
+            if (stockDifferenceDT.Rows[0]["StockDifference"] != DBNull.Value)
             {
-                newStock = int.Parse(newStockDT.Rows[0][0].ToString());
+                stockDifference = Convert.ToInt32(stockDifferenceDT.Rows[0]["StockDifference"]);
             }
 
-            SqlConnect sqlConnectRE0 = new SqlConnect();
-            string exeNonquery0 = "SELECT SUM(exportedCount) FROM Exports";
-            DataTable newStockDT1 = sqlConnectRE0.Exequery(exeNonquery0);
-            int newStock1 = 0;
-            if (newStockDT1.Rows[0][0] != DBNull.Value)
-            {
-                newStock1 = int.Parse(newStockDT1.Rows[0][0].ToString());
-            }
-
-            int newStock3 = newStock - newStock1;
-
-            if (newStock3 < 0)
+            if (stockDifference < 0)
             {
                 MessageBox.Show("Invalid record exist!");
                 return;
             }
 
             SqlConnect sqlConnectRE3 = new SqlConnect();
-            string exeNonquery3 = "UPDATE Products SET stockCount=" + newStock + " WHERE productName='" + this.txtName.Text + "'";
+            string exeNonquery3 = "UPDATE Products SET stockCount=" + stockDifference + " WHERE productName='" + this.txtName.Text + "'";
             sqlConnectRE3.ExeNonQuery(exeNonquery3);
 
             MessageBox.Show("Record Update successful!");

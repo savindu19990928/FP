@@ -21,6 +21,12 @@ namespace FP
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (Ivalidator.AreInputsEmpty(this))
+            {
+                MessageBox.Show("Please fill requiered fields!");
+                return;
+            }
+
             string passhash = BCrypt.Net.BCrypt.HashPassword(this.txtPass.Text, BCrypt.Net.BCrypt.GenerateSalt(12));
             if (GlobalData.isADMIN == true && this.txtPass.Text == this.txtPass2.Text)
             {
@@ -38,7 +44,14 @@ namespace FP
                 sqlConnect.ExeNonQuery(query);
                 MessageBox.Show("Password change successful!");
                 this.Close();
+                return;
             }
+            MessageBox.Show("Passwords don't match!");
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

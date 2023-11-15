@@ -17,6 +17,25 @@ namespace FP
         public static List<string> Products { get; set; }
         public static List<string> Imports { get; set; }
     }
+    public static class Ivalidator
+    {
+        public static bool AreInputsEmpty(Control container)
+        {
+            var inputControls = container.Controls.OfType<Control>().Where(control => control is TextBox || control is ComboBox || control is DateTimePicker);
+
+            return inputControls.Any(control =>
+                (control is TextBox || control is ComboBox) && string.IsNullOrEmpty(control.Text) ||
+                (control is DateTimePicker) && ((DateTimePicker)control).Value == DateTimePicker.MinimumDateTime);
+        }
+
+        public static bool AreInputsEmptyET(Control container)
+        {
+            var inputControls = container.Controls.OfType<Control>().Where(control => control is TextBox || control is DateTimePicker);
+
+            return inputControls.Any(control => control is TextBox && string.IsNullOrEmpty(control.Text) || (control is DateTimePicker) && ((DateTimePicker)control).Value == DateTimePicker.MinimumDateTime);
+        }
+    }
+
 
     public class SqlConnect
     {

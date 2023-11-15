@@ -37,6 +37,18 @@ namespace FP
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(this.comboID.Text) || String.IsNullOrEmpty(this.txtName.Text) || String.IsNullOrEmpty(this.txtAddress.Text))
+            {
+                MessageBox.Show("Required fields are empty!");
+                return;
+            }
+
+            if (Ivalidator.AreInputsEmpty(this))
+            {
+                MessageBox.Show("Please fill requiered fields!");
+                return;
+            }
+
             SqlConnect sqlConnectpd = new SqlConnect();
             string exequery = @"UPDATE Shops SET shopName='" + this.txtName.Text + "', shopAddress='" + this.txtAddress.Text + "' WHERE shopID='" + this.comboID.Text + "'";
             sqlConnectpd.ExeNonQuery(exequery);
@@ -45,15 +57,20 @@ namespace FP
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(this.comboID.Text))
+            {
+                MessageBox.Show("Please Select Shop ID!");
+                return;
+            }
             SqlConnect sqlConnectRR1 = new SqlConnect();
             string exeNonquery1 = "DELETE FROM Shops WHERE shopID='" + this.comboID.Text + "'";
             sqlConnectRR1.ExeNonQuery(exeNonquery1);
-            MessageBox.Show("Record deletion successful!");
+            MessageBox.Show("Deletion successful!");
         }
 
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
+            if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
             {
                 e.Handled = true;
             }

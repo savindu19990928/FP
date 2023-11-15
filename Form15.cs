@@ -20,6 +20,12 @@ namespace FP
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (Ivalidator.AreInputsEmpty(this))
+            {
+                MessageBox.Show("Please fill requiered fields!");
+                return;
+            }
+
             SqlConnect sqlConnect = new SqlConnect();
             string sql = "SELECT userName FROM Auth";
             DataTable dt = sqlConnect.Exequery(sql);

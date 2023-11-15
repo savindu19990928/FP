@@ -39,6 +39,12 @@ namespace FP
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(this.txtID.Text) || String.IsNullOrEmpty(this.txtName.Text) || String.IsNullOrEmpty(this.txtAddress.Text))
+            {
+                MessageBox.Show("Required fields are empty!");
+                return;
+            }
+
             SqlConnect sqlConnectInsert = new SqlConnect();
             string sqlQuery2 = @"INSERT INTO Shops VALUES ('" + this.txtID.Text + "', '" + this.txtName.Text + "', '" + this.txtAddress.Text + "')";
             sqlConnectInsert.ExeNonQuery(sqlQuery2);
@@ -60,7 +66,7 @@ namespace FP
 
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
+            if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
             {
                 e.Handled = true;
             }

@@ -20,6 +20,12 @@ namespace FP
 
         private void btnlog_Click(object sender, EventArgs e)
         {
+            if (Ivalidator.AreInputsEmpty(this))
+            {
+                MessageBox.Show("Please fill requiered fields!");
+                return;
+            }
+
             if (this.txtuser.Text == "Admin")
             {
                 SqlConnect sqlConnectA = new SqlConnect();

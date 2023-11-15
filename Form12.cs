@@ -172,9 +172,21 @@ namespace FP
                 return;
             }
 
+            if (Ivalidator.AreInputsEmptyET(this) || String.IsNullOrEmpty(this.comboShopID.Text))
+            {
+                MessageBox.Show("Please fill requiered fields!");
+                return;
+            }
+
             SqlConnect sqlConnectRE = new SqlConnect();
-            string exeNonquery = "UPDATE Exports SET exportedProduct='" + this.txtName.Text + "' , importedCount=" + this.stockCount.Value + ", importStatus='" + this.txtStatus.Text + "' , importDate='" + this.datePicker.Value.ToString("yyyy-MM-dd") + "' " + "WHERE importedID='" + this.txtID.Text + "'";
-            sqlConnectRE.ExeNonQuery(exeNonquery);
+            string exeNonquery = "UPDATE Exports SET exportedProduct='" + this.txtName.Text + "' , exportedCount=" + this.stockCount.Value + ", exportedShopID='" + this.comboShopID.Text + "', exportStatus='" + this.txtStatus.Text + "' , exportDate='" + this.datePicker.Value.ToString("yyyy-MM-dd") + "' " + "WHERE exportedID='" + this.txtID.Text + "'";
+            int status = sqlConnectRE.ExeNonQuery(exeNonquery);
+
+            if (status <= 0)
+            {
+                MessageBox.Show("Record update unsuccessful!");
+                return;
+            }
 
             SqlConnect sqlConnectRE2 = new SqlConnect();
             string exeNonquery2 = "SELECT SUM(importedCount) FROM Imports";
@@ -221,34 +233,24 @@ namespace FP
             string exeNonquery1 = "DELETE FROM Exports WHERE exportedID='" + this.txtID.Text + "'";
             sqlConnectRR1.ExeNonQuery(exeNonquery1);
 
-            SqlConnect sqlConnectRE2 = new SqlConnect();
-            string exeNonquery2 = "SELECT SUM(importedCount) FROM Imports";
-            DataTable newStockDT = sqlConnectRE2.Exequery(exeNonquery2);
-            int newStock = 0;
-            if (newStockDT.Rows[0][0] != DBNull.Value)
+            SqlConnect sqlConnectRE = new SqlConnect();
+            string exeNonQuery = @"SELECT (SELECT SUM(importedCount) FROM Imports WHERE importedProduct='" + this.txtName.Text + "'" + ") - (SELECT SUM(exportedCount) FROM Exports WHERE exportedProduct='" + this.txtName.Text + "') AS StockDifference";
+            DataTable stockDifferenceDT = sqlConnectRE.Exequery(exeNonQuery);
+            int stockDifference = 0;
+
+            if (stockDifferenceDT.Rows[0]["StockDifference"] != DBNull.Value)
             {
-                newStock = int.Parse(newStockDT.Rows[0][0].ToString());
+                stockDifference = Convert.ToInt32(stockDifferenceDT.Rows[0]["StockDifference"]);
             }
 
-            SqlConnect sqlConnectRE0 = new SqlConnect();
-            string exeNonquery0 = "SELECT SUM(exportedCount) FROM Exports";
-            DataTable newStockDT1 = sqlConnectRE0.Exequery(exeNonquery0);
-            int newStock1 = 0;
-            if (newStockDT1.Rows[0][0] != DBNull.Value)
-            {
-                newStock1 = int.Parse(newStockDT1.Rows[0][0].ToString());
-            }
-
-            int newStock3 = newStock - newStock1;
-
-            if (newStock3 < 0)
+            if (stockDifference < 0)
             {
                 MessageBox.Show("Invalid record exist!");
                 return;
             }
 
             SqlConnect sqlConnectRR3 = new SqlConnect();
-            string exeNonquery3 = "UPDATE Products SET stockCount=" + newStock3 + " WHERE productName='" + this.txtName.Text + "'";
+            string exeNonquery3 = "UPDATE Products SET stockCount=" + stockDifference + " WHERE productName='" + this.txtName.Text + "'";
             sqlConnectRR3.ExeNonQuery(exeNonquery3);
 
             MessageBox.Show("Record deletion successful!");

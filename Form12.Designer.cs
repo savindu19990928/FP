@@ -227,7 +227,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 676);
+            this.ClientSize = new System.Drawing.Size(526, 663);
             this.Controls.Add(this.comboShopID);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnRemove);

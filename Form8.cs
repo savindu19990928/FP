@@ -24,6 +24,12 @@ namespace FP
 
         private void addPbtn_Click(object sender, EventArgs e)
         {
+            if (Ivalidator.AreInputsEmpty(this))
+            {
+                MessageBox.Show("Please fill requiered fields!");
+                return;
+            }
+
             SqlConnect sqlConnectAP = new SqlConnect();
 
             string query = @"INSERT INTO Products VALUES ('" + this.aptxt.Text +"', 0)";
@@ -40,7 +46,7 @@ namespace FP
 
         private void aptxt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
+            if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
             {
                 e.Handled = true;
             }

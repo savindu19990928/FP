@@ -60,6 +60,12 @@ namespace FP
                 return;
             }
 
+            if (Ivalidator.AreInputsEmptyET(this))
+            {
+                MessageBox.Show("Please fill requiered fields!");
+                return;
+            }
+
             string sqlQuery1 = "UPDATE Products SET stockCount=stockCount + " + this.stockCount.Value.ToString() + " WHERE " + "productName='" + this.txtName.Text + "'";
             SqlConnect sqlConnectStockUpdate = new SqlConnect();
             sqlConnectStockUpdate.ExeNonQuery(sqlQuery1);
