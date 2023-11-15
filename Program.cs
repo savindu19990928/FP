@@ -13,6 +13,7 @@ namespace FP
     {
         public static string SingleProduct { get; set; }
         public static bool isADMIN = false;
+        public static string cUser;
         public static List<string> Products { get; set; }
         public static List<string> Imports { get; set; }
     }

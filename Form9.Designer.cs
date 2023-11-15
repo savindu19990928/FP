@@ -117,6 +117,7 @@
             this.Controls.Add(this.txtNname);
             this.Controls.Add(this.label1);
             this.Name = "formEproduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Product";
             this.Load += new System.EventHandler(this.formEproduct_Load);
             this.ResumeLayout(false);

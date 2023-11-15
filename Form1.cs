@@ -22,9 +22,13 @@ namespace FP
         {
             if (this.txtuser.Text == "Admin")
             {
-                if (this.textpass.Text == "asdf")
+                SqlConnect sqlConnectA = new SqlConnect();
+                string queryA = "SELECT password FROM Admin";
+                DataTable dtA = sqlConnectA.Exequery(queryA);
+                if (BCrypt.Net.BCrypt.Verify(this.textpass.Text, dtA.Rows[0][0].ToString()))
                 {
                     GlobalData.isADMIN = true;
+                    GlobalData.cUser = "Admin";
                     this.Hide();
                     formMain formMain = new formMain();
                     formMain.Show();
@@ -38,13 +42,15 @@ namespace FP
             }
             SqlConnect sqlconnection = new SqlConnect();
 
-            string query = @"SELECT * FROM Auth WHERE userName='" + this.txtuser.Text + "'";
+            string query = "SELECT * FROM Auth WHERE userName='" + this.txtuser.Text + "'";
             DataTable result = sqlconnection.Exequery(query);
 
             if (result.Rows.Count > 0)
             {
                 if (BCrypt.Net.BCrypt.Verify(this.textpass.Text, result.Rows[0][1].ToString()))
                 {
+                    GlobalData.cUser = this.txtuser.Text;
+                    GlobalData.isADMIN = false;
                     this.Hide();
                     formMain formMain = new formMain();
                     formMain.Show();

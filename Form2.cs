@@ -31,13 +31,6 @@ namespace FP
             Application.Exit();
         }
 
-        private void damageReportToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            formDmg formDmg = new formDmg();
-            formDmg.Show();
-        }
-
         private void importReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -79,6 +72,67 @@ namespace FP
         {
             formEproduct formEproduct = new formEproduct();
             formEproduct.Show();
+        }
+
+        private void importProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAimport importformadd = new formAimport();
+            importformadd.Show();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formEimport importformedit = new formEimport();
+            importformedit.Show();
+        }
+
+        private void addRecordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAexport exportformadd = new formAexport();
+            exportformadd.Show();
+        }
+
+        private void editRecordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formEexport exportformedit = new formEexport();
+            exportformedit.Show();
+        }
+
+        private void addShopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAshop formAshop = new formAshop();
+            formAshop.Show();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formAuth formAuth = new formAuth();
+            formAuth.Show();
+        }
+
+        private void changeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCP formCP = new formCP();
+            formCP.Show();
+        }
+
+        private void addUserToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            formAuser formAuser = new formAuser();
+            formAuser.Show();
+        }
+
+        private void removeUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formRuser formRuser = new formRuser();
+            formRuser.Show();
+        }
+
+        private void editShopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formEshop formEshop = new formEshop();
+            formEshop.Show();
         }
     }
 }

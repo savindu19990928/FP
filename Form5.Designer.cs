@@ -1,6 +1,6 @@
 ﻿namespace FP
 {
-    partial class formDmg
+    partial class formAexport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,272 +28,213 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.CrystalReportDmg1 = new FP.CrystalReportDmg();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.productReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.damageReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageShopsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addShopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editShopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.importProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.addRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editRecordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtStatus = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.stockCount = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.comboSearch = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboShopID = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.stockCount)).BeginInit();
             this.SuspendLayout();
             // 
-            // crystalReportViewer1
+            // btnCancel
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.DisplayBackgroundEdge = false;
-            this.crystalReportViewer1.DisplayStatusBar = false;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ShowCloseButton = false;
-            this.crystalReportViewer1.ShowCopyButton = false;
-            this.crystalReportViewer1.ShowExportButton = false;
-            this.crystalReportViewer1.ShowGotoPageButton = false;
-            this.crystalReportViewer1.ShowGroupTreeButton = false;
-            this.crystalReportViewer1.ShowLogo = false;
-            this.crystalReportViewer1.ShowPageNavigateButtons = false;
-            this.crystalReportViewer1.ShowParameterPanelButton = false;
-            this.crystalReportViewer1.ShowTextSearchButton = false;
-            this.crystalReportViewer1.ShowZoomButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(800, 450);
-            this.crystalReportViewer1.TabIndex = 0;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(89, 560);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(151, 38);
+            this.btnCancel.TabIndex = 24;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // menuStrip1
+            // btnSave
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.manageToolStripMenuItem,
-            this.manageUsersToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(287, 560);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(151, 38);
+            this.btnSave.TabIndex = 23;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // fileToolStripMenuItem
+            // datePicker
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reportToolStripMenuItem,
-            this.logOutToolStripMenuItem,
-            this.closeToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            this.fileToolStripMenuItem.Text = "File";
+            this.datePicker.CustomFormat = "yyyy-MM-dd";
+            this.datePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePicker.Location = new System.Drawing.Point(287, 471);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(151, 27);
+            this.datePicker.TabIndex = 22;
+            this.datePicker.Value = new System.DateTime(2023, 11, 15, 0, 30, 14, 0);
             // 
-            // reportToolStripMenuItem
+            // label5
             // 
-            this.reportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.productReportToolStripMenuItem,
-            this.damageReportToolStripMenuItem,
-            this.importReportToolStripMenuItem,
-            this.exportReportToolStripMenuItem});
-            this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.reportToolStripMenuItem.Text = "Report";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(84, 471);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 25);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Date";
             // 
-            // productReportToolStripMenuItem
+            // txtStatus
             // 
-            this.productReportToolStripMenuItem.Name = "productReportToolStripMenuItem";
-            this.productReportToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
-            this.productReportToolStripMenuItem.Text = "Product Search";
-            this.productReportToolStripMenuItem.Click += new System.EventHandler(this.productReportToolStripMenuItem_Click);
+            this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(287, 397);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(151, 27);
+            this.txtStatus.TabIndex = 20;
             // 
-            // damageReportToolStripMenuItem
+            // label4
             // 
-            this.damageReportToolStripMenuItem.Name = "damageReportToolStripMenuItem";
-            this.damageReportToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
-            this.damageReportToolStripMenuItem.Text = "Damage Report";
-            this.damageReportToolStripMenuItem.Click += new System.EventHandler(this.damageReportToolStripMenuItem_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(84, 393);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 25);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Status";
             // 
-            // importReportToolStripMenuItem
+            // stockCount
             // 
-            this.importReportToolStripMenuItem.Name = "importReportToolStripMenuItem";
-            this.importReportToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
-            this.importReportToolStripMenuItem.Text = "Import Report";
-            this.importReportToolStripMenuItem.Click += new System.EventHandler(this.importReportToolStripMenuItem_Click);
+            this.stockCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockCount.Location = new System.Drawing.Point(287, 229);
+            this.stockCount.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.stockCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.stockCount.Name = "stockCount";
+            this.stockCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.stockCount.Size = new System.Drawing.Size(151, 27);
+            this.stockCount.TabIndex = 18;
+            this.stockCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
-            // exportReportToolStripMenuItem
+            // label3
             // 
-            this.exportReportToolStripMenuItem.Name = "exportReportToolStripMenuItem";
-            this.exportReportToolStripMenuItem.Size = new System.Drawing.Size(198, 26);
-            this.exportReportToolStripMenuItem.Text = "Export Report";
-            this.exportReportToolStripMenuItem.Click += new System.EventHandler(this.exportReportToolStripMenuItem_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(84, 229);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(62, 25);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Stock";
             // 
-            // closeToolStripMenuItem
+            // label2
             // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.closeToolStripMenuItem.Text = "Close";
-            this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(84, 146);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(136, 25);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Product Name";
             // 
-            // manageToolStripMenuItem
+            // txtID
             // 
-            this.manageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manageProductToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.manageShopsToolStripMenuItem});
-            this.manageToolStripMenuItem.Name = "manageToolStripMenuItem";
-            this.manageToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
-            this.manageToolStripMenuItem.Text = "Manage";
+            this.txtID.Enabled = false;
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(287, 64);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(151, 27);
+            this.txtID.TabIndex = 14;
+            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // manageProductToolStripMenuItem
+            // label1
             // 
-            this.manageProductToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addProductToolStripMenuItem,
-            this.editProductToolStripMenuItem});
-            this.manageProductToolStripMenuItem.Name = "manageProductToolStripMenuItem";
-            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.manageProductToolStripMenuItem.Text = "Manage Product";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(84, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 25);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Export ID";
             // 
-            // addProductToolStripMenuItem
+            // txtName
             // 
-            this.addProductToolStripMenuItem.Name = "addProductToolStripMenuItem";
-            this.addProductToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
-            this.addProductToolStripMenuItem.Text = "Add Product";
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(287, 147);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(151, 27);
+            this.txtName.TabIndex = 16;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
-            // editProductToolStripMenuItem
+            // comboSearch
             // 
-            this.editProductToolStripMenuItem.Name = "editProductToolStripMenuItem";
-            this.editProductToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
-            this.editProductToolStripMenuItem.Text = "Edit Product";
+            this.comboSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboSearch.FormattingEnabled = true;
+            this.comboSearch.Location = new System.Drawing.Point(287, 146);
+            this.comboSearch.Name = "comboSearch";
+            this.comboSearch.Size = new System.Drawing.Size(151, 24);
+            this.comboSearch.TabIndex = 25;
+            this.comboSearch.SelectionChangeCommitted += new System.EventHandler(this.comboSearch_SelectionChangeCommitted);
+            this.comboSearch.DropDownClosed += new System.EventHandler(this.comboSearch_DropDownClosed);
             // 
-            // manageShopsToolStripMenuItem
+            // label6
             // 
-            this.manageShopsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addShopToolStripMenuItem,
-            this.editShopToolStripMenuItem});
-            this.manageShopsToolStripMenuItem.Name = "manageShopsToolStripMenuItem";
-            this.manageShopsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.manageShopsToolStripMenuItem.Text = "Manage Shops";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(84, 315);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 25);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Shop";
             // 
-            // addShopToolStripMenuItem
+            // comboShopID
             // 
-            this.addShopToolStripMenuItem.Name = "addShopToolStripMenuItem";
-            this.addShopToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
-            this.addShopToolStripMenuItem.Text = "Add Shop";
+            this.comboShopID.FormattingEnabled = true;
+            this.comboShopID.Location = new System.Drawing.Point(287, 319);
+            this.comboShopID.Name = "comboShopID";
+            this.comboShopID.Size = new System.Drawing.Size(151, 24);
+            this.comboShopID.TabIndex = 27;
             // 
-            // editShopToolStripMenuItem
-            // 
-            this.editShopToolStripMenuItem.Name = "editShopToolStripMenuItem";
-            this.editShopToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
-            this.editShopToolStripMenuItem.Text = "Edit Shop";
-            // 
-            // manageUsersToolStripMenuItem
-            // 
-            this.manageUsersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addUserToolStripMenuItem,
-            this.changeToolStripMenuItem});
-            this.manageUsersToolStripMenuItem.Name = "manageUsersToolStripMenuItem";
-            this.manageUsersToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
-            this.manageUsersToolStripMenuItem.Text = "Users";
-            // 
-            // addUserToolStripMenuItem
-            // 
-            this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
-            this.addUserToolStripMenuItem.Text = "Add User";
-            // 
-            // changeToolStripMenuItem
-            // 
-            this.changeToolStripMenuItem.Name = "changeToolStripMenuItem";
-            this.changeToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
-            this.changeToolStripMenuItem.Text = "Change Credentials";
-            // 
-            // logOutToolStripMenuItem
-            // 
-            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.logOutToolStripMenuItem.Text = "Log Out";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem3});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.toolStripMenuItem1.Text = "Trade";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importProductToolStripMenuItem,
-            this.editToolStripMenuItem});
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
-            this.toolStripMenuItem2.Text = "Import";
-            // 
-            // importProductToolStripMenuItem
-            // 
-            this.importProductToolStripMenuItem.Name = "importProductToolStripMenuItem";
-            this.importProductToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.importProductToolStripMenuItem.Text = "Add Record";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.editToolStripMenuItem.Text = "Edit Record";
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addRecordToolStripMenuItem,
-            this.editRecordToolStripMenuItem});
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
-            this.toolStripMenuItem3.Text = "Export";
-            // 
-            // addRecordToolStripMenuItem
-            // 
-            this.addRecordToolStripMenuItem.Name = "addRecordToolStripMenuItem";
-            this.addRecordToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.addRecordToolStripMenuItem.Text = "Add Record";
-            // 
-            // editRecordToolStripMenuItem
-            // 
-            this.editRecordToolStripMenuItem.Name = "editRecordToolStripMenuItem";
-            this.editRecordToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.editRecordToolStripMenuItem.Text = "Edit Record";
-            // 
-            // formDmg
+            // formAexport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.crystalReportViewer1);
-            this.Name = "formDmg";
-            this.Text = "Damage Report";
-            this.Load += new System.EventHandler(this.formDmg_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.ClientSize = new System.Drawing.Size(522, 665);
+            this.Controls.Add(this.comboShopID);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.datePicker);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtStatus);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.stockCount);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.comboSearch);
+            this.Name = "formAexport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Record (Export)";
+            this.Load += new System.EventHandler(this.formAexport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.stockCount)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,33 +242,20 @@
 
         #endregion
 
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private CrystalReportDmg CrystalReportDmg1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem productReportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem damageReportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importReportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exportReportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageProductToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageShopsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addShopToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editShopToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageUsersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addProductToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editProductToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem importProductToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem addRecordToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editRecordToolStripMenuItem;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DateTimePicker datePicker;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtStatus;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown stockCount;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.ComboBox comboSearch;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboShopID;
     }
 }

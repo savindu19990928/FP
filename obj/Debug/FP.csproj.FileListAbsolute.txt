@@ -30,10 +30,16 @@ C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.exe
 C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.pdb
 C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formSearch.resources
 C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formSproduct.resources
-C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formDmg.resources
 C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formExport.resources
 C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formImportR.resources
 C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.addProduct.resources
 C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formEproduct.resources
 C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formAimport.resources
 C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formEimport.resources
+C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formAexport.resources
+C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formEexport.resources
+C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formAshop.resources
+C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formEshop.resources
+C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formAuser.resources
+C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formCP.resources
+C:\Users\Savindu Shiranjaya\Desktop\Savindu\FP\obj\Debug\FP.formRuser.resources

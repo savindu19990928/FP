@@ -81,6 +81,7 @@
             this.Controls.Add(this.aptxt);
             this.Controls.Add(this.label1);
             this.Name = "addProduct";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Product";
             this.ResumeLayout(false);
             this.PerformLayout();

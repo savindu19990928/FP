@@ -169,17 +169,34 @@ namespace FP
             string exeNonquery1 = "DELETE FROM Imports WHERE importedID='" + this.txtID.Text + "'";
             sqlConnectRR1.ExeNonQuery(exeNonquery1);
 
-            SqlConnect sqlConnectRR2 = new SqlConnect();
+            SqlConnect sqlConnectRE2 = new SqlConnect();
             string exeNonquery2 = "SELECT SUM(importedCount) FROM Imports";
-            DataTable newStockDT = sqlConnectRR2.Exequery(exeNonquery2);
+            DataTable newStockDT = sqlConnectRE2.Exequery(exeNonquery2);
             int newStock = 0;
             if (newStockDT.Rows[0][0] != DBNull.Value)
             {
                 newStock = int.Parse(newStockDT.Rows[0][0].ToString());
             }
 
+            SqlConnect sqlConnectRE0 = new SqlConnect();
+            string exeNonquery0 = "SELECT SUM(exportedCount) FROM Exports";
+            DataTable newStockDT1 = sqlConnectRE0.Exequery(exeNonquery0);
+            int newStock1 = 0;
+            if (newStockDT1.Rows[0][0] != DBNull.Value)
+            {
+                newStock1 = int.Parse(newStockDT1.Rows[0][0].ToString());
+            }
+
+            int newStock3 = newStock - newStock1;
+
+            if (newStock3 < 0)
+            {
+                MessageBox.Show("Invalid record exist!");
+                return;
+            }
+
             SqlConnect sqlConnectRR3 = new SqlConnect();
-            string exeNonquery3 = "UPDATE Products SET stockCount=" + newStock + " WHERE productName='" + this.txtName.Text + "'";
+            string exeNonquery3 = "UPDATE Products SET stockCount=" + newStock3 + " WHERE productName='" + this.txtName.Text + "'";
             sqlConnectRR3.ExeNonQuery(exeNonquery3);
 
             MessageBox.Show("Record deletion successful!");
@@ -204,6 +221,23 @@ namespace FP
             if (newStockDT.Rows[0][0] != DBNull.Value)
             {
                 newStock = int.Parse(newStockDT.Rows[0][0].ToString());
+            }
+
+            SqlConnect sqlConnectRE0 = new SqlConnect();
+            string exeNonquery0 = "SELECT SUM(exportedCount) FROM Exports";
+            DataTable newStockDT1 = sqlConnectRE0.Exequery(exeNonquery0);
+            int newStock1 = 0;
+            if (newStockDT1.Rows[0][0] != DBNull.Value)
+            {
+                newStock1 = int.Parse(newStockDT1.Rows[0][0].ToString());
+            }
+
+            int newStock3 = newStock - newStock1;
+
+            if (newStock3 < 0)
+            {
+                MessageBox.Show("Invalid record exist!");
+                return;
             }
 
             SqlConnect sqlConnectRE3 = new SqlConnect();

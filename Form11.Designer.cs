@@ -153,7 +153,7 @@
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtID.Location = new System.Drawing.Point(273, 46);
+            this.txtID.Location = new System.Drawing.Point(273, 47);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(151, 27);
             this.txtID.TabIndex = 14;
@@ -184,7 +184,7 @@
             this.comboSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboSearch.FormattingEnabled = true;
-            this.comboSearch.Location = new System.Drawing.Point(273, 49);
+            this.comboSearch.Location = new System.Drawing.Point(273, 50);
             this.comboSearch.Name = "comboSearch";
             this.comboSearch.Size = new System.Drawing.Size(151, 24);
             this.comboSearch.TabIndex = 25;
@@ -223,6 +223,7 @@
             this.Controls.Add(this.comboSearch);
             this.Controls.Add(this.comboName);
             this.Name = "formEimport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Record (Import)";
             this.Load += new System.EventHandler(this.formEimport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.stockCount)).EndInit();

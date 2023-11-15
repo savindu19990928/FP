@@ -1,10 +1,8 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,55 +10,148 @@ using System.Windows.Forms;
 
 namespace FP
 {
-    public partial class formDmg : Form
+    public partial class formAexport : Form
     {
-        public formDmg()
+        public formAexport()
         {
             InitializeComponent();
         }
 
-        private void formDmg_Load(object sender, EventArgs e)
+        private bool indexChanged = false;
+        private bool dropClosed = false;
+
+        private void formAexport_Load(object sender, EventArgs e)
         {
-            ReportDocument reportDocument = new ReportDocument();
+            SqlConnect sqlconnectionShop = new SqlConnect();
+            string shopsQ = "SELECT shopID FROM Shops";
+            DataTable st = sqlconnectionShop.Exequery(shopsQ);
+            List<string> listShops = st.AsEnumerable().Select(row => row.Field<string>("shopID")).ToList();
+            this.comboShopID.Items.AddRange(listShops.ToArray());
+            
 
-            string appPath = Application.StartupPath;
-            string path = Path.GetFullPath(Path.Combine(appPath, @"..\..\"));
-            reportDocument.Load(Path.Combine(path, "CrystalReportDmg.rpt"));
+            SqlConnect sqlconnection = new SqlConnect();
+            DataTable resultp = sqlconnection.Exequery("SELECT ProductName FROM Products");
 
-            crystalReportViewer1.ReportSource = reportDocument;
+            GlobalData.Products = resultp.AsEnumerable().Select(row => row.Field<string>("ProductName")).ToList();
+
+            SqlConnect sqlConnectIDcheck = new SqlConnect();
+            string sqlQuery = "SELECT TOP 1 exportedID From Exports ORDER BY exportedID DESC ";
+            DataTable result = sqlConnectIDcheck.Exequery(sqlQuery);
+
+            if (result.Rows.Count > 0)
+            {
+                int lastID = int.Parse(result.Rows[0][0].ToString());
+                ++lastID;
+                this.txtID.Text = lastID.ToString();
+
+
+            }
+            else
+            {
+                this.txtID.Text = "1";
+            }
+
+            this.datePicker.Value = DateTime.Now;
         }
 
-        private void productReportToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            formSearch formSearch = new formSearch();
-            formSearch.Show();
+            SqlConnect sqlConnectInsertCheck = new SqlConnect();
+            string sqlQuery0 = "SELECT stockCount FROM Products WHERE productName='" + this.txtName.Text + "'";
+            DataTable stockNumDT = sqlConnectInsertCheck.Exequery(sqlQuery0);
+
+            int stockNum = int.Parse(stockNumDT.Rows[0][0].ToString());
+            int expStockNum = int.Parse(this.stockCount.Value.ToString());
+            int newStockNum = stockNum - expStockNum;
+
+            if (newStockNum < 0)
+            {
+                MessageBox.Show("Invalid record exist!");
+                return;
+            }
+
+            if (sqlConnectInsertCheck.rMsg == "Error executing query")
+            {
+                MessageBox.Show("Product name invalid!");
+                return;
+            }
+
+            string sqlQuery1 = "UPDATE Products SET stockCount=stockCount - " + this.stockCount.Value.ToString() + " WHERE " + "productName='" + this.txtName.Text + "'";
+            SqlConnect sqlConnectStockUpdate = new SqlConnect();
+            sqlConnectStockUpdate.ExeNonQuery(sqlQuery1);
+
+            SqlConnect sqlConnectInsert = new SqlConnect();
+            string sqlQuery2 = "INSERT INTO Exports VALUES ('" + this.txtID.Text + "', '" + this.txtName.Text + "', " + this.stockCount.Value.ToString() + ", '" + this.comboShopID.Text + "', '" + this.txtStatus.Text + "', '" + this.datePicker.Value.ToString("yyyy-MM-dd") + "')";
+            sqlConnectInsert.ExeNonQuery(sqlQuery2);
+
+            if (sqlConnectInsert.rMsg != "Error executing non-query")
+            {
+                MessageBox.Show("Adding record successfull");
+            }
+            else
+            {
+                MessageBox.Show("Adding record unsuccessfull");
+            }
         }
 
-        private void damageReportToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            formDmg formDmg = new formDmg();
-            formDmg.Show();
+            this.Close();
         }
 
-        private void importReportToolStripMenuItem_Click(object sender, EventArgs e)
+        private void txtName_TextChanged(object sender, EventArgs e)
         {
-            this.Hide();
-            formImportR formImport = new formImportR();
-            formImport.Show();
+            if (indexChanged || dropClosed)
+            {
+                return;
+            }
+
+            if (!string.IsNullOrEmpty(txtName.Text))
+            {
+                string searchText = txtName.Text.ToLower();
+
+                comboSearch.Items.Clear();
+
+                foreach (string product in GlobalData.Products)
+                {
+                    if (product != null && product.ToLower().Contains(searchText))
+                    {
+                        comboSearch.Items.Add(product);
+                    }
+                }
+
+                if (comboSearch.Items.Count > 0)
+                {
+                    comboSearch.DroppedDown = true;
+                }
+                else
+                {
+                    comboSearch.DroppedDown = false;
+                }
+            }
+            else
+            {
+                comboSearch.Items.Clear();
+                comboSearch.DroppedDown = false;
+            }
         }
 
-        private void exportReportToolStripMenuItem_Click(object sender, EventArgs e)
+        private void comboSearch_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            this.Hide();
-            formExport formExport = new formExport();
-            formExport.Show();
+            indexChanged = true;
+            txtName.Text = comboSearch.GetItemText(comboSearch.SelectedItem);
+            indexChanged = false;
         }
 
-        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
+        private void comboSearch_DropDownClosed(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (indexChanged)
+            {
+                return;
+            }
+            dropClosed = true;
+            comboSearch.SelectedIndex = -1;
+            dropClosed = false;
         }
     }
 }
