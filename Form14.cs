@@ -38,7 +38,7 @@ namespace FP
         private void btnSave_Click(object sender, EventArgs e)
         {
             SqlConnect sqlConnectpd = new SqlConnect();
-            string exequery = "UPDATE Shops SET shopName='" + this.txtName.Text + "', shopAddress='" + this.txtAddress.Text + "' WHERE shopID='" + this.comboID.Text + "'";
+            string exequery = @"UPDATE Shops SET shopName='" + this.txtName.Text + "', shopAddress='" + this.txtAddress.Text + "' WHERE shopID='" + this.comboID.Text + "'";
             sqlConnectpd.ExeNonQuery(exequery);
             MessageBox.Show("Record update successful!");
         }
@@ -49,6 +49,14 @@ namespace FP
             string exeNonquery1 = "DELETE FROM Shops WHERE shopID='" + this.comboID.Text + "'";
             sqlConnectRR1.ExeNonQuery(exeNonquery1);
             MessageBox.Show("Record deletion successful!");
+        }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

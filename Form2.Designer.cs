@@ -95,21 +95,21 @@
             // productReportToolStripMenuItem
             // 
             this.productReportToolStripMenuItem.Name = "productReportToolStripMenuItem";
-            this.productReportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.productReportToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.productReportToolStripMenuItem.Text = "Product Search";
             this.productReportToolStripMenuItem.Click += new System.EventHandler(this.productReportToolStripMenuItem_Click);
             // 
             // importReportToolStripMenuItem
             // 
             this.importReportToolStripMenuItem.Name = "importReportToolStripMenuItem";
-            this.importReportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.importReportToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.importReportToolStripMenuItem.Text = "Import Report";
             this.importReportToolStripMenuItem.Click += new System.EventHandler(this.importReportToolStripMenuItem_Click);
             // 
             // exportReportToolStripMenuItem
             // 
             this.exportReportToolStripMenuItem.Name = "exportReportToolStripMenuItem";
-            this.exportReportToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exportReportToolStripMenuItem.Size = new System.Drawing.Size(191, 26);
             this.exportReportToolStripMenuItem.Text = "Export Report";
             this.exportReportToolStripMenuItem.Click += new System.EventHandler(this.exportReportToolStripMenuItem_Click);
             // 
@@ -143,7 +143,7 @@
             this.addProductToolStripMenuItem,
             this.editProductToolStripMenuItem});
             this.manageProductToolStripMenuItem.Name = "manageProductToolStripMenuItem";
-            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.manageProductToolStripMenuItem.Text = "Manage Product";
             this.manageProductToolStripMenuItem.Visible = false;
             // 
@@ -167,7 +167,7 @@
             this.toolStripMenuItem2,
             this.toolStripMenuItem3});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(201, 26);
             this.toolStripMenuItem1.Text = "Trade";
             // 
             // toolStripMenuItem2
@@ -222,21 +222,21 @@
             this.addShopToolStripMenuItem,
             this.editShopToolStripMenuItem});
             this.manageShopsToolStripMenuItem.Name = "manageShopsToolStripMenuItem";
-            this.manageShopsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.manageShopsToolStripMenuItem.Size = new System.Drawing.Size(201, 26);
             this.manageShopsToolStripMenuItem.Text = "Manage Shops";
             this.manageShopsToolStripMenuItem.Visible = false;
             // 
             // addShopToolStripMenuItem
             // 
             this.addShopToolStripMenuItem.Name = "addShopToolStripMenuItem";
-            this.addShopToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addShopToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.addShopToolStripMenuItem.Text = "Add Shop";
             this.addShopToolStripMenuItem.Click += new System.EventHandler(this.addShopToolStripMenuItem_Click);
             // 
             // editShopToolStripMenuItem
             // 
             this.editShopToolStripMenuItem.Name = "editShopToolStripMenuItem";
-            this.editShopToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editShopToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
             this.editShopToolStripMenuItem.Text = "Edit Shop";
             this.editShopToolStripMenuItem.Click += new System.EventHandler(this.editShopToolStripMenuItem_Click);
             // 
@@ -255,28 +255,28 @@
             this.addUserToolStripMenuItem1,
             this.removeUserToolStripMenuItem});
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
             this.addUserToolStripMenuItem.Text = "User Management";
             this.addUserToolStripMenuItem.Visible = false;
             // 
             // addUserToolStripMenuItem1
             // 
             this.addUserToolStripMenuItem1.Name = "addUserToolStripMenuItem1";
-            this.addUserToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.addUserToolStripMenuItem1.Size = new System.Drawing.Size(179, 26);
             this.addUserToolStripMenuItem1.Text = "Add User";
             this.addUserToolStripMenuItem1.Click += new System.EventHandler(this.addUserToolStripMenuItem1_Click);
             // 
             // removeUserToolStripMenuItem
             // 
             this.removeUserToolStripMenuItem.Name = "removeUserToolStripMenuItem";
-            this.removeUserToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.removeUserToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.removeUserToolStripMenuItem.Text = "Remove User";
             this.removeUserToolStripMenuItem.Click += new System.EventHandler(this.removeUserToolStripMenuItem_Click);
             // 
             // changeToolStripMenuItem
             // 
             this.changeToolStripMenuItem.Name = "changeToolStripMenuItem";
-            this.changeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.changeToolStripMenuItem.Size = new System.Drawing.Size(213, 26);
             this.changeToolStripMenuItem.Text = "Change Password";
             this.changeToolStripMenuItem.Click += new System.EventHandler(this.changeToolStripMenuItem_Click);
             // 

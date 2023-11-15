@@ -36,7 +36,7 @@ namespace FP
                 GlobalData.SingleProduct = this.searchBar.Text;
                 this.Hide();
                 formSproduct formSproduct = new formSproduct();
-                formSproduct.Show();
+                formSproduct.ShowDialog();
             }
             else
             {

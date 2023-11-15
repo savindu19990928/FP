@@ -50,12 +50,13 @@
             this.aptxt.Name = "aptxt";
             this.aptxt.Size = new System.Drawing.Size(169, 22);
             this.aptxt.TabIndex = 4;
+            this.aptxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.aptxt_KeyPress);
             // 
             // addPbtn
             // 
             this.addPbtn.Location = new System.Drawing.Point(259, 154);
             this.addPbtn.Name = "addPbtn";
-            this.addPbtn.Size = new System.Drawing.Size(169, 23);
+            this.addPbtn.Size = new System.Drawing.Size(169, 38);
             this.addPbtn.TabIndex = 5;
             this.addPbtn.Text = "Add";
             this.addPbtn.UseVisualStyleBackColor = true;
@@ -65,7 +66,7 @@
             // 
             this.cancelBtnAP.Location = new System.Drawing.Point(51, 154);
             this.cancelBtnAP.Name = "cancelBtnAP";
-            this.cancelBtnAP.Size = new System.Drawing.Size(169, 23);
+            this.cancelBtnAP.Size = new System.Drawing.Size(169, 38);
             this.cancelBtnAP.TabIndex = 6;
             this.cancelBtnAP.Text = "Cancel";
             this.cancelBtnAP.UseVisualStyleBackColor = true;

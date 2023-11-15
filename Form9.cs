@@ -91,7 +91,7 @@ namespace FP
         private void btnSave_Click(object sender, EventArgs e)
         {
             SqlConnect sqlConnectionUp = new SqlConnect();
-            string upQuery = "UPDATE Products SET productName='" + txtNname.Text + "' WHERE productName='" + txtSearch.Text + "'";
+            string upQuery = @"UPDATE Products SET productName='" + txtNname.Text + "' WHERE productName='" + txtSearch.Text + "'";
             sqlConnectionUp.ExeNonQuery(upQuery);
 
             if (sqlConnectionUp.rMsg != "Error executing non-query")
@@ -117,6 +117,14 @@ namespace FP
             else
             {
                 MessageBox.Show("Deleting unsuccessfull");
+            }
+        }
+
+        private void txtNname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
             }
         }
     }

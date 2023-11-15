@@ -26,7 +26,7 @@ namespace FP
         {
             SqlConnect sqlConnectAP = new SqlConnect();
 
-            string query = "INSERT INTO Products VALUES ('" + this.aptxt.Text +"', 0)";
+            string query = @"INSERT INTO Products VALUES ('" + this.aptxt.Text +"', 0)";
             sqlConnectAP.ExeNonQuery(query);
             if (sqlConnectAP.rMsg != "Error executing non-query")
             {
@@ -35,6 +35,14 @@ namespace FP
             else
             {
                 MessageBox.Show("Product adding unsuccessfull");
+            }
+        }
+
+        private void aptxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
             }
         }
     }

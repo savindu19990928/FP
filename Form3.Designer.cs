@@ -84,6 +84,7 @@
             this.Controls.Add(this.searchBar);
             this.Controls.Add(this.txtSearch);
             this.Name = "formSearch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search Product";
             this.Load += new System.EventHandler(this.formSearch_Load);
             this.ResumeLayout(false);

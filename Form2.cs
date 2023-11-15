@@ -23,7 +23,7 @@ namespace FP
         {
             this.Hide();
             formSearch formSearch = new formSearch();
-            formSearch.Show();
+            formSearch.ShowDialog();
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -35,14 +35,14 @@ namespace FP
         {
             this.Hide();
             formImportR formImport = new formImportR();
-            formImport.Show();
+            formImport.ShowDialog();
         }
 
         private void exportReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             formExport formExport = new formExport();
-            formExport.Show();
+            formExport.ShowDialog();
         }
 
         private void formMain_Load(object sender, EventArgs e)
@@ -58,81 +58,81 @@ namespace FP
             string appPath = Application.StartupPath;
             string path = Path.GetFullPath(Path.Combine(appPath, @"..\..\"));
             reportDocument.Load(Path.Combine(path, "CrystalReportAP1.rpt"));
-
+            reportDocument.Refresh();
             crystalReportViewer2.ReportSource = reportDocument;
         }
 
         private void addProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
             addProduct addProductform = new addProduct();
-            addProductform.Show();
+            addProductform.ShowDialog();
         }
 
         private void editProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formEproduct formEproduct = new formEproduct();
-            formEproduct.Show();
+            formEproduct.ShowDialog();
         }
 
         private void importProductToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formAimport importformadd = new formAimport();
-            importformadd.Show();
+            importformadd.ShowDialog();
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formEimport importformedit = new formEimport();
-            importformedit.Show();
+            importformedit.ShowDialog();
         }
 
         private void addRecordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formAexport exportformadd = new formAexport();
-            exportformadd.Show();
+            exportformadd.ShowDialog();
         }
 
         private void editRecordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formEexport exportformedit = new formEexport();
-            exportformedit.Show();
+            exportformedit.ShowDialog();
         }
 
         private void addShopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formAshop formAshop = new formAshop();
-            formAshop.Show();
+            formAshop.ShowDialog();
         }
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             formAuth formAuth = new formAuth();
-            formAuth.Show();
+            formAuth.ShowDialog();
         }
 
         private void changeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formCP formCP = new formCP();
-            formCP.Show();
+            formCP.ShowDialog();
         }
 
         private void addUserToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             formAuser formAuser = new formAuser();
-            formAuser.Show();
+            formAuser.ShowDialog();
         }
 
         private void removeUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formRuser formRuser = new formRuser();
-            formRuser.Show();
+            formRuser.ShowDialog();
         }
 
         private void editShopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formEshop formEshop = new formEshop();
-            formEshop.Show();
+            formEshop.ShowDialog();
         }
     }
 }

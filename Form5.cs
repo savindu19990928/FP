@@ -76,12 +76,12 @@ namespace FP
                 return;
             }
 
-            string sqlQuery1 = "UPDATE Products SET stockCount=stockCount - " + this.stockCount.Value.ToString() + " WHERE " + "productName='" + this.txtName.Text + "'";
+            string sqlQuery1 = @"UPDATE Products SET stockCount=stockCount - " + this.stockCount.Value.ToString() + " WHERE " + "productName='" + this.txtName.Text + "'";
             SqlConnect sqlConnectStockUpdate = new SqlConnect();
             sqlConnectStockUpdate.ExeNonQuery(sqlQuery1);
 
             SqlConnect sqlConnectInsert = new SqlConnect();
-            string sqlQuery2 = "INSERT INTO Exports VALUES ('" + this.txtID.Text + "', '" + this.txtName.Text + "', " + this.stockCount.Value.ToString() + ", '" + this.comboShopID.Text + "', '" + this.txtStatus.Text + "', '" + this.datePicker.Value.ToString("yyyy-MM-dd") + "')";
+            string sqlQuery2 = @"INSERT INTO Exports VALUES ('" + this.txtID.Text + "', '" + this.txtName.Text + "', " + this.stockCount.Value.ToString() + ", '" + this.comboShopID.Text + "', '" + this.txtStatus.Text + "', '" + this.datePicker.Value.ToString("yyyy-MM-dd") + "')";
             sqlConnectInsert.ExeNonQuery(sqlQuery2);
 
             if (sqlConnectInsert.rMsg != "Error executing non-query")

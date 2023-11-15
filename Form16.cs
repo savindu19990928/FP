@@ -25,7 +25,7 @@ namespace FP
             if (GlobalData.isADMIN == true && this.txtPass.Text == this.txtPass2.Text)
             {
                 SqlConnect sqlConnectA = new SqlConnect();
-                string queryA = "UPDATE Admin SET password='" + passhash + "'";
+                string queryA = @"UPDATE Admin SET password='" + passhash + "'";
                 sqlConnectA.ExeNonQuery(queryA);
                 MessageBox.Show("Password change successful!");
                 this.Close();
@@ -34,7 +34,7 @@ namespace FP
             if (this.txtPass.Text == this.txtPass2.Text)
             {
                 SqlConnect sqlConnect = new SqlConnect();
-                string query = "UPDATE Auth SET password='" + passhash + "' WHERE userName='" + GlobalData.cUser + "'";
+                string query = @"UPDATE Auth SET password='" + passhash + "' WHERE userName='" + GlobalData.cUser + "'";
                 sqlConnect.ExeNonQuery(query);
                 MessageBox.Show("Password change successful!");
                 this.Close();

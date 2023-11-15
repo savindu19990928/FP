@@ -31,7 +31,7 @@ namespace FP
                     GlobalData.cUser = "Admin";
                     this.Hide();
                     formMain formMain = new formMain();
-                    formMain.Show();
+                    formMain.ShowDialog();
 
                 }
                 else
@@ -42,7 +42,7 @@ namespace FP
             }
             SqlConnect sqlconnection = new SqlConnect();
 
-            string query = "SELECT * FROM Auth WHERE userName='" + this.txtuser.Text + "'";
+            string query = @"SELECT * FROM Auth WHERE userName='" + this.txtuser.Text + "'";
             DataTable result = sqlconnection.Exequery(query);
 
             if (result.Rows.Count > 0)
@@ -53,7 +53,7 @@ namespace FP
                     GlobalData.isADMIN = false;
                     this.Hide();
                     formMain formMain = new formMain();
-                    formMain.Show();
+                    formMain.ShowDialog();
                 }
                 else
                 {

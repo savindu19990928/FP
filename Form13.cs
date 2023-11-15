@@ -40,7 +40,7 @@ namespace FP
         private void btnSave_Click(object sender, EventArgs e)
         {
             SqlConnect sqlConnectInsert = new SqlConnect();
-            string sqlQuery2 = "INSERT INTO Shops VALUES ('" + this.txtID.Text + "', '" + this.txtName.Text + "', '" + this.txtAddress.Text + "')";
+            string sqlQuery2 = @"INSERT INTO Shops VALUES ('" + this.txtID.Text + "', '" + this.txtName.Text + "', '" + this.txtAddress.Text + "')";
             sqlConnectInsert.ExeNonQuery(sqlQuery2);
 
             if (sqlConnectInsert.rMsg != "Error executing non-query")
@@ -56,6 +56,14 @@ namespace FP
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != (char)Keys.Space)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
