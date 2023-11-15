@@ -36,7 +36,7 @@ namespace FP
             reportDocument.Load(Path.Combine(path, "CrystalReportSP.rpt"));
 
             reportDocument.SetParameterValue("Parameter", GlobalData.SingleProduct.ToString());
-            reportDocument.Refresh();
+
             crystalViewerSP1.ReportSource = reportDocument;
         }
 
@@ -137,6 +137,13 @@ namespace FP
         {
             formEshop formEshop = new formEshop();
             formEshop.ShowDialog();
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formMain formMain = new formMain();
+            formMain.ShowDialog();
         }
     }
 }

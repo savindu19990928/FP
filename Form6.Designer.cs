@@ -35,6 +35,7 @@
             this.productReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.importReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,6 +101,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reportToolStripMenuItem,
+            this.homeToolStripMenuItem,
             this.logOutToolStripMenuItem,
             this.closeToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -137,6 +139,13 @@
             this.exportReportToolStripMenuItem.Text = "Export Report";
             this.exportReportToolStripMenuItem.Click += new System.EventHandler(this.exportReportToolStripMenuItem_Click);
             // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.homeToolStripMenuItem.Text = "Home";
+            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
+            // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
@@ -169,18 +178,19 @@
             this.manageProductToolStripMenuItem.Name = "manageProductToolStripMenuItem";
             this.manageProductToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.manageProductToolStripMenuItem.Text = "Manage Product";
+            this.manageProductToolStripMenuItem.Visible = false;
             // 
             // addProductToolStripMenuItem
             // 
             this.addProductToolStripMenuItem.Name = "addProductToolStripMenuItem";
-            this.addProductToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.addProductToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.addProductToolStripMenuItem.Text = "Add Product";
             this.addProductToolStripMenuItem.Click += new System.EventHandler(this.addProductToolStripMenuItem_Click);
             // 
             // editProductToolStripMenuItem
             // 
             this.editProductToolStripMenuItem.Name = "editProductToolStripMenuItem";
-            this.editProductToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
+            this.editProductToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.editProductToolStripMenuItem.Text = "Edit Product";
             this.editProductToolStripMenuItem.Click += new System.EventHandler(this.editProductToolStripMenuItem_Click);
             // 
@@ -199,7 +209,7 @@
             this.importProductToolStripMenuItem,
             this.editToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(137, 26);
             this.toolStripMenuItem2.Text = "Import";
             // 
             // importProductToolStripMenuItem
@@ -222,7 +232,7 @@
             this.addRecordToolStripMenuItem,
             this.editRecordToolStripMenuItem});
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(137, 26);
             this.toolStripMenuItem3.Text = "Export";
             // 
             // addRecordToolStripMenuItem
@@ -247,6 +257,7 @@
             this.manageShopsToolStripMenuItem.Name = "manageShopsToolStripMenuItem";
             this.manageShopsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.manageShopsToolStripMenuItem.Text = "Manage Shops";
+            this.manageShopsToolStripMenuItem.Visible = false;
             // 
             // addShopToolStripMenuItem
             // 
@@ -350,5 +361,6 @@
         private System.Windows.Forms.ToolStripMenuItem addUserToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem removeUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
     }
 }

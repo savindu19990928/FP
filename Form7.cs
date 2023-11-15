@@ -135,5 +135,12 @@ namespace FP
             formCP formCP = new formCP();
             formCP.ShowDialog();
         }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formMain formMain = new formMain();
+            formMain.ShowDialog();
+        }
     }
 }

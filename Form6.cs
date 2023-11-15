@@ -134,5 +134,12 @@ namespace FP
             formEshop formEshop = new formEshop();
             formEshop.ShowDialog();
         }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formMain formMain = new formMain();
+            formMain.ShowDialog();
+        }
     }
 }
